@@ -30,19 +30,7 @@ html,body{width:100%;height:100%;overflow:hidden;background:#031722}
 .scene .landscape,.scene .shade,.scene .light{display:none}.scene canvas{width:1280px;height:720px;z-index:-1}
 .scene header{padding:24px 38px}.scene .brand{font-size:18px}.scene .status{font-size:12px}.scene .copy{left:38px;top:100px}.scene h1{font-size:40px}.scene .intro{display:none}.scene .kicker{font-size:10px}.scene .depth{display:none}
 .scene .bottom{left:38px;right:38px;bottom:24px;flex-direction:row;align-items:end;gap:20px}.scene .location{font-size:11px}.scene .place{font-size:18px}.scene .note{font-size:13px;background:#06253599;padding:8px 12px;border-radius:4px}.scene .controls{width:auto}.scene button{font-size:13px;white-space:nowrap}.scene .copy{text-shadow:0 2px 15px #022538}.scene .brand,.scene .status,.scene .place,.scene .location{text-shadow:0 2px 7px #022538}
-</style><style>.level-switch{display:flex;gap:12px;align-items:center}.level-switch button[aria-pressed="true"]{background:#187b8b;border-color:#92e3df}.level-switch .status{margin-left:15px}#nextLevel{background:#17667b;border-color:#8bd6d6}</style><style>
-.scene .bottom{bottom:110px;pointer-events:none}.scene .bottom button{pointer-events:auto}.scene .bottom .note{display:none}
-.skillbar{position:absolute;bottom:17px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;height:82px;padding:10px 18px;background:linear-gradient(180deg,#152d31f5,#081619fa);border:1px solid #ac9254;box-shadow:0 0 0 3px #071217,0 0 0 4px #6b5a34,0 8px 24px #0009,inset 0 1px 0 #e2c68033;border-radius:7px;z-index:5}
-.skillbar::before,.skillbar::after{content:'';position:absolute;top:5px;bottom:5px;width:3px;border-top:3px solid #dbc182;border-bottom:3px solid #dbc182;pointer-events:none}.skillbar::before{left:5px}.skillbar::after{right:5px}
-.skillbar .utility{width:60px;height:59px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;background:linear-gradient(#18333a,#0b1b20);border:1px solid #73613c;border-radius:5px;color:#b7a679;font-size:11px;letter-spacing:.07em;padding:0;cursor:default;opacity:1}
-.skillbar .utility.auto{border-radius:50%;border-color:#7a9a9e;box-shadow:inset 0 0 12px #458b9a25;color:#a1c4c9}.skillbar .utility small{font-size:9px;letter-spacing:.07em;color:#778b89}.skill-divider{height:44px;width:1px;background:linear-gradient(transparent,#a18a52,transparent);margin:0 3px}
-.skill-slots{display:flex;gap:8px}.skillbar .skill-slot{position:relative;width:58px;height:58px;border:1px solid #716446;border-radius:4px;background:linear-gradient(145deg,#132629,#091518);box-shadow:inset 0 0 0 2px #071215,inset 0 0 15px #0005;padding:0;cursor:default;opacity:1}
-.skill-slot::before{content:'';position:absolute;inset:5px;border:1px solid #cbb1710c;border-radius:1px}.skill-slot span{position:absolute;bottom:-7px;left:50%;transform:translateX(-50%);min-width:18px;background:#0b191e;color:#c2b387;font-size:11px;line-height:16px;text-align:center;border:1px solid #615636;border-radius:3px;letter-spacing:0}
-</style><style>
-.skillbar .utility:not(:disabled){cursor:pointer;transition:background .15s,border-color .15s,box-shadow .15s,transform .1s}.skillbar .utility:not(:disabled):hover{border-color:#e6cb88;background:#22444b}.skillbar .utility:not(:disabled):active{transform:translateY(2px) scale(.96)}.skillbar .utility.auto[aria-pressed="true"]{background:radial-gradient(#27718a,#103a4a);border-color:#7fe5f7;box-shadow:0 0 14px #61d8ec77,inset 0 0 12px #65d7ee44;color:#e3fbff}.skillbar .utility.auto[aria-pressed="true"] small{color:#a3f1eb}.skillbar .utility.clicked{animation:raise-flash .35s ease-out}@keyframes raise-flash{0%{box-shadow:0 0 0 2px #f4d282;background:#6c5527}100%{box-shadow:0 0 0 8px transparent}}
-.action-feedback{position:absolute;left:50%;bottom:114px;transform:translate(-50%,6px);pointer-events:none;opacity:0;transition:opacity .18s,transform .18s;background:#071c26ed;border:1px solid #a98d51;color:#f1ddb2;border-radius:5px;padding:10px 20px;font-size:14px;letter-spacing:.06em;z-index:6}.action-feedback.visible{opacity:1;transform:translate(-50%,0)}
-</style>
-<style>#raiseButton[aria-pressed="true"]{background:linear-gradient(#655329,#352b18);border-color:#efd089;box-shadow:0 0 12px #dbb65c55;color:#fff0c5}#raiseButton[aria-pressed="true"] small{color:#f4d787}</style></head>
+</style><style>.level-switch{display:flex;gap:12px;align-items:center}.level-switch button[aria-pressed="true"]{background:#187b8b;border-color:#92e3df}.level-switch .status{margin-left:15px}#nextLevel{background:#17667b;border-color:#8bd6d6}</style><style>.scene .bottom{bottom:24px}</style></head>
 <body>
 <main class="scene" id="scene" tabindex="0" aria-label="橫向側視海底場景，使用 W A S D 控制潛水員上下左右游動">
 <div class="landscape" role="img" aria-label="橫向側視的珊瑚礁岩壁，近景深色海草遮擋中景平台，後方岩壁淡入藍色水霧"></div><div class="light"></div><canvas id="particles" aria-hidden="true"></canvas><div class="shade"></div>
@@ -50,28 +38,10 @@ html,body{width:100%;height:100%;overflow:hidden;background:#031722}
 <section class="copy"><p class="kicker">BENEATH THE SURFACE</p><h1>海面之下<br>別有天地</h1><p class="intro">沿著珊瑚與岩壁之間的光，<br>探索岩礁間的深藍。</p></section>
 <div class="depth" aria-hidden="true">12 M BELOW THE SURFACE</div>
 <footer class="bottom"><div><div class="location">01 / OCEAN EXPLORATION</div><div class="place">珊瑚礁海域</div><div class="note"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> 移動 / 左鍵瞄準，長按持續投擲魚叉。</div></div><div class="controls"><button id="nextLevel" type="button" hidden>前往第 2 關</button><button id="retry" type="button" hidden>再次挑戰</button><button id="motion" type="button" aria-pressed="false">暫停動態</button><button id="fullscreen" type="button">全螢幕欣賞</button></div></footer>
-<div class="skillbar" role="group" aria-label="技能快捷列">
-<button id="autoToggle" class="utility auto" type="button" aria-pressed="false" aria-label="切換自動戰鬥狀態"><span>AUTO</span><small>自動戰鬥</small></button>
-<button id="raiseButton" class="utility" type="button" aria-label="加押，關閉" aria-pressed="false"><span>加押</span><small id="raiseValue">關</small></button>
-<div class="skill-divider" aria-hidden="true"></div>
-<div class="skill-slots" role="group" aria-label="八個空技能槽">
-<button class="skill-slot" type="button" disabled aria-label="技能槽 1，空"><span>1</span></button>
-<button class="skill-slot" type="button" disabled aria-label="技能槽 2，空"><span>2</span></button>
-<button class="skill-slot" type="button" disabled aria-label="技能槽 3，空"><span>3</span></button>
-<button class="skill-slot" type="button" disabled aria-label="技能槽 4，空"><span>4</span></button>
-<button class="skill-slot" type="button" disabled aria-label="技能槽 5，空"><span>5</span></button>
-<button class="skill-slot" type="button" disabled aria-label="技能槽 6，空"><span>6</span></button>
-<button class="skill-slot" type="button" disabled aria-label="技能槽 7，空"><span>7</span></button>
-<button class="skill-slot" type="button" disabled aria-label="技能槽 8，空"><span>8</span></button>
-</div></div><div id="actionFeedback" class="action-feedback" role="status" aria-live="polite"></div></main>
+</main>
 <script>
 (()=>{
 const scene=document.getElementById('scene'),canvas=document.getElementById('particles'),ctx=canvas.getContext('2d'),motion=document.getElementById('motion'),full=document.getElementById('fullscreen');
-let autoSelected=false,raiseEnabled=false,feedbackTimer;
-const autoToggle=document.getElementById('autoToggle'),raiseButton=document.getElementById('raiseButton'),actionFeedback=document.getElementById('actionFeedback');
-function showFeedback(message){actionFeedback.textContent=message;actionFeedback.classList.add('visible');clearTimeout(feedbackTimer);feedbackTimer=setTimeout(()=>actionFeedback.classList.remove('visible'),1800)}
-autoToggle.addEventListener('click',()=>{autoSelected=!autoSelected;autoToggle.setAttribute('aria-pressed',String(autoSelected));autoToggle.querySelector('small').textContent=autoSelected?'已選取':'自動戰鬥';showFeedback(autoSelected?'自動戰鬥已選取（功能待設定）':'自動戰鬥已取消');scene.focus({preventScroll:true})});
-raiseButton.addEventListener('click',()=>{raiseEnabled=!raiseEnabled;document.getElementById('raiseValue').textContent=raiseEnabled?'開':'關';raiseButton.setAttribute('aria-pressed',String(raiseEnabled));raiseButton.setAttribute('aria-label',raiseEnabled?'加押，開啟':'加押，關閉');showFeedback(raiseEnabled?'加押已開啟':'加押已關閉');scene.focus({preventScroll:true})});
 const CAMERA_W=1280,CAMERA_H=720,WORLD_W=3840;let cameraX=0,currentLevel=0,worldReady=false;
 const levels=[{title:"珊瑚秘境",names:["珊瑚礁海域","珊瑚岩窟","沉沒遺跡"],files:["reef-sideview.png","reef-grotto.png","reef-ruins.png"],boss:"深礁蟹王",hp:300,speed:1},{title:"幽光深淵",names:["螢光海林","熱泉裂谷","深淵祭壇"],files:["level2-kelp.png","level2-vents.png","level2-sanctum.png"],boss:"深淵蟹皇",hp:500,speed:1.3}];
 const levelImages=levels.map(level=>level.files.map(()=>new Image()));
@@ -86,6 +56,9 @@ const bossArt=new Image();bossArt.src='boss-reef-king.png';
 const bossTexture=document.createElement('canvas');const bossTex=bossTexture.getContext('2d');
 bossArt.onload=()=>{bossTexture.width=600;bossTexture.height=Math.round(600*bossArt.naturalHeight/bossArt.naturalWidth);bossTex.drawImage(bossArt,0,0,bossTexture.width,bossTexture.height)};
 let bossTime=0,bossPhase='patrol',phaseTime=0,bossHP=300,hitFlash=0;const bossDust=[];let bossTarget=null;const harpoons=[],hitNumbers=[];let combatTime=0,lastShot=-1,totalShots=0;let firing=false,firePointer=null,aimClientX=0,aimClientY=0;
+let bossDeathTime=0;
+const bossPatrol={x:3300,y:430,dir:-1};
+function resetBossPatrol(){bossDeathTime=0;bossPatrol.x=3300;bossPatrol.y=430;bossPatrol.dir=-1;}
 const ease=t=>{t=Math.max(0,Math.min(1,t));return t*t*(3-2*t)};
 function bossTriangle(a,b,c,sa,sb,sc){
  ctx.save();ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.lineTo(c.x,c.y);ctx.closePath();ctx.clip();
@@ -94,17 +67,24 @@ function bossTriangle(a,b,c,sa,sb,sc){
  const u=m(a.x,b.x,c.x),v=m(a.y,b.y,c.y);ctx.transform(u[0],v[0],u[1],v[1],u[2],v[2]);ctx.drawImage(bossTexture,0,0);ctx.restore();
 }
 function paintBoss(dt){
+ const effectDt=dt;if(bossHP<=0)bossDeathTime=Math.min(1.4,bossDeathTime+dt);else bossDeathTime=0;const opacity=1-ease(bossDeathTime/1.4);scene.dataset.bossOpacity=opacity.toFixed(3);if(opacity<=0){bossTarget=null;bossDust.length=0;return;}
  dt*=levels[currentLevel].speed;if(bossHP<=0){dt=0;bossPhase='defeated'}bossTime+=dt;phaseTime+=dt;if(!bossTexture.width||!bossArt.complete||!bossArt.naturalWidth)return;
  const bounds=waterBounds(),bw=Math.max(168,Math.min(410,w*.43)),bh=bw*bossArt.naturalHeight/bossArt.naturalWidth;
- const homeX=Math.min(w-bw*.54,w*.84),homeY=bounds.top+bounds.height*.65;
+ if(bossPhase==='patrol'&&dt>0){
+  bossPatrol.x+=bossPatrol.dir*68*dt;
+  if(bossPatrol.x<=2820){bossPatrol.x=2820;bossPatrol.dir=1;}
+  else if(bossPatrol.x>=3540){bossPatrol.x=3540;bossPatrol.dir=-1;}
+  bossPatrol.y+=(420+Math.sin(bossTime*.35)*55-bossPatrol.y)*(1-Math.exp(-dt*2));
+ }
+ const homeX=bossPatrol.x,homeY=bossPatrol.y;
  const near=Math.hypot(diver.x*w-homeX,bounds.top+diver.y*bounds.height-homeY)<bw*.95;
- if(bossPhase==='patrol'&&phaseTime>(near?2.8:6)){bossPhase='windup';phaseTime=0}
- else if(bossPhase==='windup'&&phaseTime>1.1){bossPhase='strike';phaseTime=0;for(let i=0;i<20;i++)bossDust.push({x:homeX-bw*.3,y:homeY-bh*.1,vx:-30-Math.random()*75,vy:(Math.random()-.5)*75,life:0,r:1+Math.random()*3})}
+ if(bossPhase==='patrol'&&near&&phaseTime>2.8){bossPhase='windup';phaseTime=0;bossPatrol.dir=diver.x*w<homeX?-1:1;}
+ else if(bossPhase==='windup'&&phaseTime>1.1){bossPhase='strike';phaseTime=0;for(let i=0;i<20;i++)bossDust.push({x:homeX+bossPatrol.dir*bw*.3,y:homeY-bh*.1,vx:bossPatrol.dir*(30+Math.random()*75),vy:(Math.random()-.5)*75,life:0,r:1+Math.random()*3})}
  else if(bossPhase==='strike'&&phaseTime>.48){bossPhase='recover';phaseTime=0}
  else if(bossPhase==='recover'&&phaseTime>1.2){bossPhase='patrol';phaseTime=0}
  let charge=0,hit=0;if(bossPhase==='windup')charge=ease(phaseTime/1.1);if(bossPhase==='strike'){charge=1-ease(phaseTime/.48);hit=Math.sin(Math.PI*Math.min(1,phaseTime/.48))}if(bossPhase==='recover')charge=-.15*(1-ease(phaseTime/1.2));
- const bx=homeX+Math.sin(bossTime*.65)*bw*.045+charge*bw*.035-hit*bw*.23,by=homeY+Math.sin(bossTime*1.7)*4-charge*bh*.045;
- bossTarget={x:bx,y:by,w:bw,h:bh};scene.dataset.bossX=bx.toFixed(1);scene.dataset.bossY=by.toFixed(1);scene.dataset.bossHp=String(bossHP);ctx.save();ctx.globalAlpha=bossHP<=0?.45:1;ctx.filter=(currentLevel===1?'hue-rotate(45deg) saturate(1.25) ':'')+(hitFlash>0?'brightness(1.9)':'brightness(1)');ctx.translate(bx,by);ctx.rotate(Math.sin(bossTime*.8)*.025-hit*.045);ctx.imageSmoothingEnabled=true;
+ const bx=bossHP<=0&&bossTarget?bossTarget.x:homeX+bossPatrol.dir*(hit*bw*.23-charge*bw*.035),by=bossHP<=0&&bossTarget?bossTarget.y:homeY+Math.sin(bossTime*1.7)*4-charge*bh*.045;
+ bossTarget={x:bx,y:by,w:bw,h:bh,flip:-bossPatrol.dir};scene.dataset.bossX=bx.toFixed(1);scene.dataset.bossY=by.toFixed(1);scene.dataset.bossFacing=bossPatrol.dir===1?'right':'left';scene.dataset.bossHp=String(bossHP);ctx.save();ctx.globalAlpha=opacity;ctx.filter=(currentLevel===1?'hue-rotate(45deg) saturate(1.25) ':'')+(hitFlash>0?'brightness(1.9)':'brightness(1)');ctx.translate(bx,by);ctx.scale(-bossPatrol.dir,1);ctx.rotate(Math.sin(bossTime*.8)*.025-hit*.045);ctx.imageSmoothingEnabled=true;
  const cols=14,rows=10,mesh=[];
  for(let j=0;j<=rows;j++){mesh[j]=[];for(let i=0;i<=cols;i++){
  const u=i/cols,v=j/rows;let px=u,py=v;
@@ -118,8 +98,8 @@ function paintBoss(dt){
  for(let j=0;j<rows;j++)for(let i=0;i<cols;i++){const a=mesh[j][i],b=mesh[j][i+1],c=mesh[j+1][i],d=mesh[j+1][i+1];bossTriangle(a.p,b.p,c.p,a.s,b.s,c.s);bossTriangle(b.p,d.p,c.p,b.s,d.s,c.s)}
  if(charge>0){ctx.globalCompositeOperation='screen';ctx.fillStyle='rgba(255,155,70,'+(charge*.42)+')';ctx.shadowColor='#ff922f';ctx.shadowBlur=12;for(const eye of [[.501,.35],[.598,.37]]){ctx.beginPath();ctx.arc((eye[0]-.5)*bw,(eye[1]-.5)*bh,bw*.014,0,Math.PI*2);ctx.fill()}}
  ctx.restore();
- for(let i=bossDust.length-1;i>=0;i--){const p=bossDust[i];p.life+=dt;p.x+=p.vx*dt;p.y+=p.vy*dt;ctx.fillStyle='rgba(168,228,224,'+Math.max(0,.65-p.life*.45)+')';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();if(p.life>1.4)bossDust.splice(i,1)}
- const barW=bw*.65,barY=by-bh/2-14;ctx.save();ctx.textAlign='center';ctx.font='600 '+Math.max(11,Math.min(16,w*.02))+'px system-ui';ctx.shadowColor='#031d30';ctx.shadowBlur=8;ctx.fillStyle='#f4e4c9';ctx.fillText(levels[currentLevel].boss,bx,barY-12);ctx.shadowBlur=0;
+ for(let i=bossDust.length-1;i>=0;i--){const p=bossDust[i];p.life+=effectDt;p.x+=p.vx*effectDt;p.y+=p.vy*effectDt;ctx.fillStyle='rgba(168,228,224,'+Math.max(0,.65-p.life*.45)+')';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();if(p.life>1.4)bossDust.splice(i,1)}
+ const barW=bw*.65,barY=by-bh/2-14;ctx.save();ctx.globalAlpha=opacity;ctx.textAlign='center';ctx.font='600 '+Math.max(11,Math.min(16,w*.02))+'px system-ui';ctx.shadowColor='#031d30';ctx.shadowBlur=8;ctx.fillStyle='#f4e4c9';ctx.fillText(levels[currentLevel].boss,bx,barY-12);ctx.shadowBlur=0;
  ctx.fillStyle='rgba(3,21,32,.9)';ctx.fillRect(bx-barW/2-2,barY-2,barW+4,7);ctx.fillStyle=bossPhase==='patrol'?'#99bab1':'#df9564';ctx.fillRect(bx-barW/2,barY,barW*bossHP/levels[currentLevel].hp,3);
  ctx.font='10px system-ui';ctx.fillStyle='#e7e5d2';ctx.fillText({patrol:'巡游',windup:'蓄力',strike:'揮螯',recover:'收勢',defeated:'已擊敗'}[bossPhase],bx,barY+18);ctx.restore();scene.dataset.bossPhase=bossPhase;
 }
@@ -130,8 +110,11 @@ function waterBounds(){const height=w<=650?w*2/3:h;return {top:(h-height)/2,bott
 function paintDiver(dt){
  const bounds=waterBounds(),scale=Math.max(.9,Math.min(1.65,w/620));
  let dx=Number(held.has('KeyD'))-Number(held.has('KeyA')),dy=Number(held.has('KeyS'))-Number(held.has('KeyW'));
- const moving=!!(dx||dy),len=Math.hypot(dx,dy)||1,speed=Math.min(215,w*.33);
- diver.vx+=(dx/len*speed-diver.vx)*Math.min(1,dt*9);diver.vy+=(dy/len*speed-diver.vy)*Math.min(1,dt*9);
+ const moving=!!(dx||dy),len=Math.hypot(dx,dy)||1,speed=195;
+ // Water drag: build momentum gently and dissipate it after releasing input.
+ diver.vx+=(dx/len*speed-diver.vx)*(1-Math.exp(-dt*(dx?3.6:4.5)));
+ diver.vy+=(dy/len*speed*.9-diver.vy)*(1-Math.exp(-dt*(dy?3.6:4.5)));
+ if(!dx&&Math.abs(diver.vx)<.3)diver.vx=0;if(!dy&&Math.abs(diver.vy)<.3)diver.vy=0;
  diver.x=Math.max(35*scale/w,Math.min(1-35*scale/w,diver.x+diver.vx*dt/w));
  diver.y=Math.max(26*scale/bounds.height,Math.min(1-26*scale/bounds.height,diver.y+diver.vy*dt/bounds.height));
  if(dx)diver.dir=dx>0?1:-1;swimTime+=dt*(moving?10:3);
@@ -151,18 +134,18 @@ function paintDiver(dt){
  ctx.save();ctx.translate(px,py+Math.sin(swimTime*.45)*1.3);ctx.scale(diver.dir*scale,scale);ctx.rotate(Math.max(-.16,Math.min(.16,diver.vy/800))*diver.dir);ctx.imageSmoothingEnabled=false;ctx.drawImage(sprite,-32,-20);ctx.restore();
  scene.dataset.playerX=diver.x.toFixed(4);scene.dataset.playerY=diver.y.toFixed(4);scene.dataset.facing=diver.dir===1?'right':'left';
 }
-window.addEventListener('keydown',event=>{if(!['KeyW','KeyA','KeyS','KeyD'].includes(event.code)||event.ctrlKey||event.metaKey||event.altKey||/INPUT|TEXTAREA|SELECT/.test(event.target.tagName)||event.target.isContentEditable)return;if(!held.has(event.code)){const impulse=Math.min(215,w*.33)*.55;if(event.code==='KeyD'){diver.vx=impulse;diver.dir=1}if(event.code==='KeyA'){diver.vx=-impulse;diver.dir=-1}if(event.code==='KeyW')diver.vy=-impulse;if(event.code==='KeyS')diver.vy=impulse}held.add(event.code);scene.classList.add('playing');event.preventDefault()});
+window.addEventListener('keydown',event=>{if(!['KeyW','KeyA','KeyS','KeyD'].includes(event.code)||event.ctrlKey||event.metaKey||event.altKey||/INPUT|TEXTAREA|SELECT/.test(event.target.tagName)||event.target.isContentEditable)return;held.add(event.code);scene.classList.add('playing');event.preventDefault()});
 window.addEventListener('keyup',event=>held.delete(event.code));
 window.addEventListener('blur',()=>{firing=false;firePointer=null;held.clear();diver.vx=0;diver.vy=0});
 document.addEventListener('visibilitychange',()=>{if(document.hidden){firing=false;firePointer=null;held.clear();diver.vx=0;diver.vy=0}});
 function fireHarpoon(){
- const aimElement=document.elementFromPoint(aimClientX,aimClientY);if(aimElement&&aimElement.closest('.skillbar,button,header,footer'))return;const area=scene.getBoundingClientRect(),screenX=(aimClientX-area.left)*CAMERA_W/area.width,ty=(aimClientY-area.top)*CAMERA_H/area.height,tx=cameraX+screenX,bounds=waterBounds();
- if(!worldReady||screenX<0||screenX>CAMERA_W||ty<bounds.top||ty>bounds.bottom||combatTime-lastShot<.3||bossHP<=0||!bossTarget)return;
+ const aimElement=document.elementFromPoint(aimClientX,aimClientY);if(aimElement&&aimElement.closest('button,header,footer'))return;const area=scene.getBoundingClientRect(),screenX=(aimClientX-area.left)*CAMERA_W/area.width,ty=(aimClientY-area.top)*CAMERA_H/area.height,tx=cameraX+screenX,bounds=waterBounds();
+ if(!worldReady||screenX<0||screenX>CAMERA_W||ty<bounds.top||ty>bounds.bottom||combatTime-lastShot<.3)return;
  const px=diver.x*w,py=bounds.top+diver.y*bounds.height,dx=tx-px,dy=ty-py,len=Math.hypot(dx,dy);if(len<5)return;
  lastShot=combatTime;totalShots++;diver.dir=dx>=0?1:-1;scene.classList.add('playing');harpoons.push({x:px,y:py,vx:dx/len*620,vy:dy/len*620,angle:Math.atan2(dy,dx),age:0});
 }
 scene.addEventListener('pointerdown',event=>{
- if(event.button!==0||event.target.closest('button,a,header,footer,.skillbar'))return;
+ if(event.button!==0||event.target.closest('button,a,header,footer'))return;
  scene.focus({preventScroll:true});aimClientX=event.clientX;aimClientY=event.clientY;firePointer=event.pointerId;firing=true;fireHarpoon();
 });
 window.addEventListener('pointermove',event=>{if(!firing||event.pointerId!==firePointer)return;aimClientX=event.clientX;aimClientY=event.clientY;if(event.buttons!==undefined&&!(event.buttons&1)){firing=false;firePointer=null}});
@@ -175,7 +158,7 @@ function segmentHits(ax,ay,bx,by,cx,cy,rx,ry){
 function paintCombat(dt){
  combatTime+=dt;if(firing)fireHarpoon();scene.dataset.shots=String(totalShots);scene.dataset.firing=String(firing);hitFlash=Math.max(0,hitFlash-dt);
  for(let i=harpoons.length-1;i>=0;i--){const p=harpoons[i],ox=p.x,oy=p.y;p.x+=p.vx*dt;p.y+=p.vy*dt;p.age+=dt;
- const b=bossTarget,hit=b&&bossHP>0&&(segmentHits(ox,oy,p.x,p.y,b.x+b.w*.11,b.y,b.w*.25,b.h*.35)||segmentHits(ox,oy,p.x,p.y,b.x-b.w*.29,b.y-b.h*.12,b.w*.17,b.h*.27));
+ const b=bossTarget,hit=b&&bossHP>0&&(segmentHits(ox,oy,p.x,p.y,b.x+b.flip*b.w*.11,b.y,b.w*.25,b.h*.35)||segmentHits(ox,oy,p.x,p.y,b.x-b.flip*b.w*.29,b.y-b.h*.12,b.w*.17,b.h*.27));
  if(hit){bossHP=Math.max(0,bossHP-25);hitFlash=.14;hitNumbers.push({x:p.x,y:p.y,age:0});for(let j=0;j<10;j++)bossDust.push({x:p.x,y:p.y,vx:(Math.random()-.5)*95,vy:(Math.random()-.5)*95,life:0,r:1+Math.random()*2});harpoons.splice(i,1);if(!bossHP){firing=false;firePointer=null;bossPhase='defeated';document.getElementById('retry').hidden=false;document.getElementById('nextLevel').hidden=currentLevel!==0;harpoons.length=0;break}continue}
  if(p.age>2||p.x<-50||p.x>w+50||p.y<-50||p.y>h+50){harpoons.splice(i,1);continue}
  ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.angle);ctx.strokeStyle='rgba(165,246,255,.35)';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(-44,0);ctx.lineTo(-14,0);ctx.stroke();ctx.strokeStyle='#e0efdc';ctx.lineWidth=2.5;ctx.beginPath();ctx.moveTo(-19,0);ctx.lineTo(9,0);ctx.stroke();ctx.fillStyle='#ffe3a0';ctx.beginPath();ctx.moveTo(14,0);ctx.lineTo(4,-4);ctx.lineTo(6,0);ctx.lineTo(4,4);ctx.closePath();ctx.fill();ctx.restore();
@@ -183,13 +166,34 @@ function paintCombat(dt){
  for(let i=hitNumbers.length-1;i>=0;i--){const n=hitNumbers[i];n.age+=dt;ctx.save();ctx.globalAlpha=Math.max(0,1-n.age);ctx.font='bold 16px system-ui';ctx.textAlign='center';ctx.fillStyle='#ffdb98';ctx.shadowColor='#173645';ctx.shadowBlur=5;ctx.fillText('-25',n.x,n.y-12-n.age*35);ctx.restore();if(n.age>1)hitNumbers.splice(i,1)}
  scene.dataset.bossHp=String(bossHP);scene.dataset.harpoons=String(harpoons.length);
 }
- document.getElementById('retry').addEventListener('click',()=>{firing=false;firePointer=null;bossHP=levels[currentLevel].hp;bossPhase='patrol';phaseTime=0;hitFlash=0;bossDust.length=0;harpoons.length=0;hitNumbers.length=0;document.getElementById('retry').hidden=true;document.getElementById('nextLevel').hidden=true;scene.focus({preventScroll:true})});
+ document.getElementById('retry').addEventListener('click',()=>{resetBossPatrol();firing=false;firePointer=null;bossHP=levels[currentLevel].hp;bossPhase='patrol';phaseTime=0;hitFlash=0;bossDust.length=0;harpoons.length=0;hitNumbers.length=0;document.getElementById('retry').hidden=true;document.getElementById('nextLevel').hidden=true;scene.focus({preventScroll:true})});
 function switchLevel(index){
-currentLevel=index;firing=false;firePointer=null;held.clear();diver.x=512/WORLD_W;diver.y=.48;diver.dir=1;diver.vx=0;diver.vy=0;cameraX=0;bossHP=levels[index].hp;bossTime=0;phaseTime=0;bossPhase='patrol';bossTarget=null;bossDust.length=0;harpoons.length=0;hitNumbers.length=0;bubbles.length=0;hitFlash=0;lastShot=-1;worldReady=false;worldCtx.clearRect(0,0,WORLD_W,CAMERA_H);composeWorld();
+resetBossPatrol();currentLevel=index;firing=false;firePointer=null;held.clear();diver.x=512/WORLD_W;diver.y=.48;diver.dir=1;diver.vx=0;diver.vy=0;cameraX=0;bossHP=levels[index].hp;bossTime=0;phaseTime=0;bossPhase='patrol';bossTarget=null;bossDust.length=0;harpoons.length=0;hitNumbers.length=0;bubbles.length=0;hitFlash=0;lastShot=-1;worldReady=false;worldCtx.clearRect(0,0,WORLD_W,CAMERA_H);composeWorld();
 document.getElementById('retry').hidden=true;document.getElementById('nextLevel').hidden=true;document.getElementById('level1').setAttribute('aria-pressed',String(index===0));document.getElementById('level2').setAttribute('aria-pressed',String(index===1));document.querySelector('.kicker').textContent='LEVEL '+(index+1);document.querySelector('h1').textContent=levels[index].title;scene.focus({preventScroll:true});}
 document.getElementById('level1').addEventListener('click',()=>switchLevel(0));document.getElementById('level2').addEventListener('click',()=>switchLevel(1));document.getElementById('nextLevel').addEventListener('click',()=>switchLevel(1));
 let paused=reduced,w=0,h=0,x=0,y=0,targetX=0,targetY=0,time=0,last=performance.now();
 const motes=Array.from({length:55},(_,i)=>({x:Math.random(),y:Math.random(),z:1+(i%3),v:Math.random()*.006+.004}));
+function paintOcean(foreground=false){
+ ctx.save();
+ if(!foreground){
+  ctx.globalCompositeOperation='screen';
+  for(let i=0;i<9;i++){const px=i*470+Math.sin(time*.18+i)*36;
+   const glow=ctx.createLinearGradient(px,0,px+180,580);glow.addColorStop(0,'rgba(170,244,240,.09)');glow.addColorStop(1,'rgba(100,224,235,0)');
+   ctx.fillStyle=glow;ctx.beginPath();ctx.moveTo(px-30,0);ctx.lineTo(px+35,0);ctx.lineTo(px+260,580);ctx.lineTo(px+100,580);ctx.closePath();ctx.fill();
+  }
+  ctx.globalCompositeOperation='source-over';
+  for(let i=0;i<30;i++){const dir=i%2?1:-1,px=((i*137+time*dir*(12+i%4*3))%WORLD_W+WORLD_W)%WORLD_W,py=160+(i%7)*46+Math.sin(time*.7+i)*9;
+   ctx.save();ctx.translate(px,py);ctx.scale(dir,1);ctx.fillStyle=currentLevel?'rgba(86,178,186,.35)':'rgba(15,82,110,.3)';ctx.beginPath();ctx.ellipse(0,0,7,2.5,0,0,Math.PI*2);ctx.fill();ctx.beginPath();ctx.moveTo(-5,0);ctx.lineTo(-10,-4);ctx.lineTo(-10,4);ctx.closePath();ctx.fill();ctx.restore();
+  }
+  for(let i=0;i<36;i++){const py=720-((time*(14+i%5*3)+i*97)%730),px=i*109+Math.sin(time*.8+i)*9;ctx.strokeStyle='rgba(196,246,246,.24)';ctx.lineWidth=1;ctx.beginPath();ctx.arc(px,py,1.5+i%3,0,Math.PI*2);ctx.stroke();}
+ }else{
+  for(let i=0;i<48;i++){const px=i*83+20,base=724,height=28+(i*37%65),sway=Math.sin(time*1.15+i*.8)*9;
+   if(px<cameraX-40||px>cameraX+1320)continue;
+   ctx.strokeStyle=currentLevel?'rgba(25,100,117,.75)':'rgba(8,69,72,.8)';ctx.lineWidth=3+i%3;ctx.lineCap='round';ctx.beginPath();ctx.moveTo(px,base);ctx.bezierCurveTo(px-6,base-height*.35,px+sway,base-height*.7,px+sway*1.6,base-height);ctx.stroke();
+  }
+ }
+ ctx.restore();
+}
 function resize(){w=WORLD_W;h=CAMERA_H;canvas.width=CAMERA_W;canvas.height=CAMERA_H;scene.style.setProperty('--viewport-scale',Math.min(window.innerWidth/CAMERA_W,window.innerHeight/CAMERA_H));}
 function label(){motion.textContent=paused?'繼續動態':'暫停動態';motion.setAttribute('aria-pressed',String(paused))}
 scene.addEventListener('pointermove',e=>{const r=scene.getBoundingClientRect();targetX=(e.clientX-r.left)/r.width-.5;targetY=(e.clientY-r.top)/r.height-.5});
@@ -198,8 +202,8 @@ motion.addEventListener('click',()=>{paused=!paused;label()});
 full.addEventListener('click',async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await scene.requestFullscreen()}catch{full.textContent='此瀏覽器未支援全螢幕'}});
 document.addEventListener('fullscreenchange',()=>{full.textContent=document.fullscreenElement?'離開全螢幕':'全螢幕欣賞';resize()});
 function frame(now){const dt=Math.min((now-last)/1000,.05);last=now;if(!paused){time+=dt;x+=(targetX-x)*.025;y+=(targetY-y)*.025;scene.style.setProperty('--x',(-x*22+Math.sin(time*.12)*2)+'px');scene.style.setProperty('--y',(-y*15)+'px');scene.style.setProperty('--light',(x*34+Math.sin(time*.2)*15)+'px')}
-cameraX+=(Math.max(0,Math.min(WORLD_W-CAMERA_W,diver.x*w-CAMERA_W*.46))-cameraX)*(1-Math.exp(-dt*6));ctx.clearRect(0,0,CAMERA_W,CAMERA_H);ctx.fillStyle='#0b7096';ctx.fillRect(0,0,CAMERA_W,CAMERA_H);ctx.drawImage(worldLayer,cameraX,0,CAMERA_W,CAMERA_H,0,0,CAMERA_W,CAMERA_H);ctx.save();ctx.translate(-cameraX,0);for(const p of motes){if(!paused)p.y=(p.y-p.v*dt+1)%1;const px=p.x*w-x*p.z*19+Math.sin(time*.2+p.x*20)*p.z*3,py=p.y*h-y*p.z*15;ctx.beginPath();ctx.fillStyle='rgba(208,251,249,'+(.06+p.z*.04)+')';ctx.arc(px,py,p.z*.6,0,Math.PI*2);ctx.fill()}paintBoss(paused?0:dt);paintDiver(worldReady?dt:0);paintCombat(worldReady?dt:0);
-ctx.save();ctx.beginPath();for(let n=0;n<3;n++){const left=n*1280;ctx.moveTo(left,618);ctx.lineTo(left+120,642);ctx.lineTo(left+290,699);ctx.lineTo(left+420,720);ctx.lineTo(left,720);ctx.closePath();ctx.moveTo(left+1040,690);ctx.lineTo(left+1190,649);ctx.lineTo(left+1280,610);ctx.lineTo(left+1280,720);ctx.lineTo(left+990,720);ctx.closePath()}ctx.clip();ctx.drawImage(worldLayer,0,0);ctx.restore();ctx.restore();
+cameraX+=(Math.max(0,Math.min(WORLD_W-CAMERA_W,diver.x*w-CAMERA_W*.46))-cameraX)*(1-Math.exp(-dt*6));ctx.clearRect(0,0,CAMERA_W,CAMERA_H);ctx.fillStyle='#0b7096';ctx.fillRect(0,0,CAMERA_W,CAMERA_H);ctx.drawImage(worldLayer,cameraX,0,CAMERA_W,CAMERA_H,0,0,CAMERA_W,CAMERA_H);ctx.save();ctx.translate(-cameraX,0);paintOcean();for(const p of motes){if(!paused)p.y=(p.y-p.v*dt+1)%1;const px=p.x*w-x*p.z*19+Math.sin(time*.2+p.x*20)*p.z*3,py=p.y*h-y*p.z*15;ctx.beginPath();ctx.fillStyle='rgba(208,251,249,'+(.06+p.z*.04)+')';ctx.arc(px,py,p.z*.6,0,Math.PI*2);ctx.fill()}paintBoss(paused?0:dt);paintDiver(worldReady?dt:0);paintCombat(worldReady?dt:0);
+ctx.save();ctx.beginPath();for(let n=0;n<3;n++){const left=n*1280;ctx.moveTo(left,618);ctx.lineTo(left+120,642);ctx.lineTo(left+290,699);ctx.lineTo(left+420,720);ctx.lineTo(left,720);ctx.closePath();ctx.moveTo(left+1040,690);ctx.lineTo(left+1190,649);ctx.lineTo(left+1280,610);ctx.lineTo(left+1280,720);ctx.lineTo(left+990,720);ctx.closePath()}ctx.clip();ctx.drawImage(worldLayer,0,0);ctx.restore();paintOcean(true);ctx.restore();
 scene.dataset.cameraX=cameraX.toFixed(1);scene.dataset.cameraSize='1280x720';scene.dataset.worldSize='3840x720';
 const zone=Math.min(3,Math.floor(diver.x*w/1280)+1);scene.dataset.zone=String(zone);scene.dataset.level=String(currentLevel+1);const level=levels[currentLevel];document.querySelector('.status').textContent='第 '+(currentLevel+1)+' 關 / 場景 '+zone+' · '+level.title;document.querySelector('.place').textContent='場景 '+zone+' · '+level.names[zone-1];document.querySelector('.location').textContent=!worldReady?'場景載入中':bossHP<=0?(currentLevel===0?'第 1 關完成 · 可前往第 2 關':'第 2 關完成 · 幽光深淵探索成功'):'CAMERA 1280 × 720 / '+(zone<3?'向右探索場景 '+(zone+1):level.boss+'棲地');
 requestAnimationFrame(frame)}
@@ -208,15 +212,3 @@ resize();label();window.addEventListener('resize',resize);requestAnimationFrame(
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
